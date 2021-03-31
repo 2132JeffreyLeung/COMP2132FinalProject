@@ -8,15 +8,22 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #00aaf5;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0px;
 }
 
 header {
-  background-color: darkblue;
+  background-color: #00aaf5;
   color: white;
-  padding: 5px;
-  padding-left: 10px;
+  background-image: url(../images/white_dice_1.png), url(../images/white_dice_6.png);
+  background-position: left, right;
+  background-repeat: no-repeat;
+  background-attachment: relative;
+  background-size: 8%;
 }
 
 main {
@@ -24,6 +31,11 @@ main {
   flex: 1;
   flex-direction: column;
   padding: 5px;
+  background-image: url(../images/blue_dice_1.png), url(../images/blue_dice_2.png), url(../images/blue_dice_3.png), url(../images/blue_dice_4.png), url(../images/blue_dice_5.png), url(../images/blue_dice_6.png);
+  background-position: top left, top, top right, bottom left, bottom, bottom right;
+  background-repeat: no-repeat;
+  background-attachment: relative;
+  background-size: 4%;
 }
 
 p {
@@ -31,7 +43,7 @@ p {
   padding-right: 10px;
 }
 
-h2 {
+h1 {
   text-align: center;
 }
 
@@ -40,8 +52,12 @@ ul {
 }
 
 footer {
-  background-color: darkblue;
+  background-color: #00aaf5;
   color: white;
+}
+
+footer p {
+  text-align: center;
 }
 
 #wrapper {
@@ -51,4 +67,56 @@ footer {
   flex-direction: column;
   min-height: 100vh;
   background-color: white;
+}
+
+#btn-roll {
+  border: 2px solid #00aaf5;
+  background-color: white;
+  color: #00aaf5;
+  width: 33%;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#btn-new {
+  border: 2px solid #00aaf5;
+  background-color: white;
+  color: #00aaf5;
+  width: 33%;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 0.9rem;
+  margin-right: auto;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#btn-history {
+  border: 2px solid #00aaf5;
+  background-color: white;
+  color: #00aaf5;
+  width: 591.4px;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 0.9rem;
+  margin: auto;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#btn-roll:hover,
+#btn-new:hover,
+#btn-history:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+#button-wrapper {
+  display: flex;
 }

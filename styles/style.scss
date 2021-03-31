@@ -1,3 +1,18 @@
+$first_background_color: #00aaf5;
+$second_background_color: darkblue;
+$first_color: white;
+$second_color: #00aaf5;
+
+@mixin button($border_color, $background_color, $color, $width){
+    border: 2px solid $border_color;
+    background-color: $background_color;
+    color: $color;
+    width: $width;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 0.9rem;
+}
+
 html{
     box-sizing: border-box;
 }
@@ -8,15 +23,29 @@ html{
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #00aaf5;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0px;
 }
 
 header{
-    background-color: darkblue;
-    color: white;
-    padding: 5px;
-    padding-left: 10px;
+    background-color: $first_background_color;
+    color: $first_color;
+    
+    background-image:
+    url(../images/white_dice_1.png),
+    url(../images/white_dice_6.png);
+
+    background-position:
+    left,
+    right;
+
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-size: 8%;
 }
 
 main{
@@ -24,6 +53,26 @@ main{
     flex: 1;
     flex-direction: column;
     padding: 5px;
+
+    background-image:
+    url(../images/blue_dice_1.png),
+    url(../images/blue_dice_2.png),
+    url(../images/blue_dice_3.png),
+    url(../images/blue_dice_4.png),
+    url(../images/blue_dice_5.png),
+    url(../images/blue_dice_6.png);
+
+    background-position:
+    top left,
+    top,
+    top right,
+    bottom left,
+    bottom,
+    bottom right;
+    
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-size: 4%;
 }
 
 p{
@@ -31,7 +80,7 @@ p{
     padding-right: 10px;
 }
 
-h2{
+h1{
     text-align: center;
 }
 
@@ -40,8 +89,12 @@ ul{
 }
 
 footer{
-    background-color: darkblue;
-    color: white;
+    background-color: $first_background_color;
+    color: $first_color;
+}
+
+footer p{
+    text-align: center;
 }
 
 #wrapper{
@@ -51,4 +104,39 @@ footer{
     flex-direction: column;
     min-height: 100vh;
     background-color: white;
+}
+
+#btn-roll{
+    @include button($first_background_color, $first_color, $second_color, 33%);
+    margin-left: auto;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#btn-new{
+    @include button($first_background_color, $first_color, $second_color, 33%);
+    margin-right: auto;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#btn-history{
+    @include button($first_background_color, $first_color, $second_color, 591.4px);
+    // 890px wrapper * 33% button * 2 buttons + 2x margin-left + 2px margin-right = 591.4px
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#btn-roll:hover,
+#btn-new:hover,
+#btn-history:hover{
+    background-color:lightgray;
+    cursor: pointer;
+}
+
+#button-wrapper{
+    display: flex;
 }
